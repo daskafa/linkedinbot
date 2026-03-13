@@ -8,6 +8,10 @@ from datetime import datetime
 TELEGRAM_TOKEN = os.environ.get('TELEGRAM_TOKEN', '')
 CHAT_ID = os.environ.get('CHAT_ID', '')
 
+# Sessiz saatler (Telegram bildirimi gönderilmez, ama bot çalışır)
+SILENT_HOURS_START = 0  # Gece 12 (00:00)
+SILENT_HOURS_END = 9    # Sabah 9 (09:00)
+
 # LinkedIn arama URL'leri (virgülle ayrılmış)
 SEARCH_URLS_STR = os.environ.get('LINKEDIN_SEARCH_URLS', 
     'https://www.linkedin.com/jobs/search/?keywords=Python%20Developer&location=Turkey')
@@ -102,6 +106,12 @@ def send_telegram_message(message):
     """Telegram'a bildirim gönder"""
     if not TELEGRAM_TOKEN or not CHAT_ID:
         print("Telegram ayarlari yapilmamis")
+        return
+    
+    # Sessiz saatlerde bildirim gönderme
+    current_hour = datetime.now().hour
+    if SILENT_HOURS_START <= current_hour < SILENT_HOURS_END:
+        print(f"Sessiz saat ({current_hour:02d}:00) - Telegram bildirimi atlanıyor")
         return
     
     url = f"https://api.telegram.org/bot{TELEGRAM_TOKEN}/sendMessage"

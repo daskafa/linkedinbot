@@ -6,9 +6,12 @@ LinkedIn'de yeni iş ilanlarını otomatik takip eden ve Telegram'dan bildirim g
 
 - ✅ Tamamen ücretsiz (GitHub Actions)
 - ✅ PC kapalı olsa bile çalışır
-- ✅ Her 4 saatte otomatik kontrol
+- ✅ Her saat otomatik kontrol
+- ✅ Gece sessiz mod (00:00 - 09:00 arası bildirim yok)
 - ✅ Telegram bildirimi
 - ✅ Login gerektirmez
+- ✅ Birden fazla arama desteği
+- ✅ Keyword filtresi
 
 ## Kurulum
 
@@ -89,14 +92,23 @@ Bot her 4 saatte otomatik çalışır. Manuel çalıştırmak için:
 `.github/workflows/job-checker.yml` dosyasında:
 
 ```yaml
+# Her saat
+- cron: '0 * * * *'
+
 # Her 2 saatte
 - cron: '0 */2 * * *'
 
-# Her 6 saatte
-- cron: '0 */6 * * *'
+# Her 30 dakikada
+- cron: '*/30 * * * *'
+```
 
-# Günde 2 kez (09:00, 18:00 UTC)
-- cron: '0 9,18 * * *'
+### Sessiz Saatleri Değiştir
+
+`linkedin_job_scraper.py` dosyasında:
+
+```python
+SILENT_HOURS_START = 0  # Başlangıç saati (00:00)
+SILENT_HOURS_END = 9    # Bitiş saati (09:00)
 ```
 
 ### Arama Kriterlerini Değiştir
@@ -155,7 +167,8 @@ python3 -m http.server 8000
 - GitHub Actions ayda 2000 dakika ücretsiz (bu bot için fazlasıyla yeterli)
 - Bot sadece yeni ilanları bildirir (tekrar göndermez)
 - Son 500 ilan hafızada tutulur
-- LinkedIn'in rate limit'ine takılmamak için 4 saatte bir çalışır
+- Gece 00:00 - 09:00 arası Telegram bildirimi gönderilmez (bot yine çalışır)
+- Bot her saat çalışır ama sessiz saatlerde sadece verileri toplar
 
 ## Lisans
 
