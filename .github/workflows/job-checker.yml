@@ -8,6 +8,9 @@ on:
   # Manuel çalıştırma için
   workflow_dispatch:
 
+permissions:
+  contents: write
+
 jobs:
   check-jobs:
     runs-on: ubuntu-latest
