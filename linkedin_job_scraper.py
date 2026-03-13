@@ -139,6 +139,9 @@ def fetch_job_description(job_url):
     }
     
     try:
+        import time
+        time.sleep(2)  # Her detay sayfası için 2 saniye bekle
+        
         response = requests.get(job_url, headers=headers, timeout=10)
         response.raise_for_status()
         
@@ -166,6 +169,16 @@ def fetch_job_description(job_url):
         
         return description[:2000]  # İlk 2000 karakter yeterli
         
+    except requests.exceptions.HTTPError as e:
+        if e.response.status_code == 429:
+            # Rate limit - sessizce atla, hata mesajı gönderme
+            print(f"Rate limit (429) - Aciklama atlanıyor: {job_url}")
+            return ''
+        else:
+            error_msg = f"HATA: Aciklama cekme hatasi\nURL: {job_url}\nHata: {str(e)}"
+            print(error_msg)
+            send_telegram_message(error_msg, is_error=True)
+            return ''
     except Exception as e:
         error_msg = f"HATA: Aciklama cekme hatasi\nURL: {job_url}\nHata: {str(e)}"
         print(error_msg)
@@ -211,10 +224,7 @@ def scrape_linkedin_jobs(search_url):
                         'link': job_url
                     }
                     jobs.append(job)
-                    
-                    # LinkedIn'i yormamak için kısa bekleme
-                    import time
-                    time.sleep(1)
+                    # Bekleme fetch_job_description içinde yapılıyor
                     
             except Exception as e:
                 error_msg = f"HATA: Ilan parse hatasi\nHata: {str(e)}"
@@ -255,10 +265,11 @@ def main():
             jobs = scrape_linkedin_jobs(search_url)
             all_jobs.extend(jobs)
             
-            # LinkedIn'i yormamak için kısa bekleme
+            # LinkedIn'i yormamak için aramalar arası bekleme
             if idx < len(SEARCH_URLS):
                 import time
-                time.sleep(2)
+                print(f"\nAramalar arasi 5 saniye bekleniyor...")
+                time.sleep(5)
         
         # Duplicate ilanları temizle (aynı link birden fazla aramada çıkabilir)
         unique_jobs = []
