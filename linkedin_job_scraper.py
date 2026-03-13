@@ -221,14 +221,12 @@ def main():
     if not unique_jobs:
         print("Hic ilan bulunamadi")
         # Yine de özet gönder
-        summary = f"""━━━━━━━━━━━━━━━━━━━━━━
-BOT CALISMA OZETI
+        summary = f"""BOT CALISMA OZETI
 
 Tarih: {datetime.now().strftime('%d.%m.%Y %H:%M')}
 Taranan: 0 ilan
 Yeni: 0 ilan
-Durum: Yeni ilan bulunamadi
-━━━━━━━━━━━━━━━━━━━━━━"""
+Durum: Yeni ilan bulunamadi"""
         send_telegram_message(summary)
         return
     
@@ -252,15 +250,13 @@ Durum: Yeni ilan bulunamadi
     
     # Yeni ilanları bildir
     for job in new_jobs:
-        message = f"""━━━━━━━━━━━━━━━━━━━━━━
-YENI IS ILANI
+        message = f"""YENI IS ILANI
 
 Pozisyon: {job['title']}
 Sirket: {job['company']}
 Lokasyon: {job['location']}
 
-Link: {job['link']}
-━━━━━━━━━━━━━━━━━━━━━━"""
+Link: {job['link']}"""
         
         print(f"\nBildirim: {job['title']} - {job['company']}")
         send_telegram_message(message)
@@ -269,14 +265,12 @@ Link: {job['link']}
         seen_jobs.append(job['link'])
     
     # Özet mesajı gönder
-    summary = f"""━━━━━━━━━━━━━━━━━━━━━━
-BOT CALISMA OZETI
+    summary = f"""BOT CALISMA OZETI
 
 Tarih: {datetime.now().strftime('%d.%m.%Y %H:%M')}
 Taranan: {len(unique_jobs)} ilan
 Yeni: {len(new_jobs)} ilan
-Durum: {'Yeni ilanlar bulundu' if new_jobs else 'Yeni ilan yok'}
-━━━━━━━━━━━━━━━━━━━━━━"""
+Durum: {'Yeni ilanlar bulundu' if new_jobs else 'Yeni ilan yok'}"""
     send_telegram_message(summary)
     
     # Günlük ilanları kaydet
