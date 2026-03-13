@@ -171,8 +171,10 @@ def fetch_job_description(job_url):
         
     except requests.exceptions.HTTPError as e:
         if e.response.status_code == 429:
-            # Rate limit - sessizce atla, hata mesajı gönderme
-            print(f"Rate limit (429) - Aciklama atlanıyor: {job_url}")
+            # Rate limit - Telegram'a bildir
+            error_msg = f"UYARI: LinkedIn Rate Limit (429)\n\nCok fazla istek atildi. Bot yavaslatildi.\nURL: {job_url}"
+            print(error_msg)
+            send_telegram_message(error_msg, is_error=True)
             return ''
         else:
             error_msg = f"HATA: Aciklama cekme hatasi\nURL: {job_url}\nHata: {str(e)}"
