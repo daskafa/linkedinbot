@@ -102,17 +102,18 @@ def matches_keywords(job, keywords):
     
     return False
 
-def send_telegram_message(message):
+def send_telegram_message(message, is_error=False):
     """Telegram'a bildirim gönder"""
     if not TELEGRAM_TOKEN or not CHAT_ID:
         print("Telegram ayarlari yapilmamis")
         return
     
-    # Sessiz saatlerde bildirim gönderme
-    current_hour = datetime.now().hour
-    if SILENT_HOURS_START <= current_hour < SILENT_HOURS_END:
-        print(f"Sessiz saat ({current_hour:02d}:00) - Telegram bildirimi atlanıyor")
-        return
+    # Hata mesajları her zaman gönderilir, normal mesajlar sessiz saatlerde atlanır
+    if not is_error:
+        current_hour = datetime.now().hour
+        if SILENT_HOURS_START <= current_hour < SILENT_HOURS_END:
+            print(f"Sessiz saat ({current_hour:02d}:00) - Telegram bildirimi atlanıyor")
+            return
     
     url = f"https://api.telegram.org/bot{TELEGRAM_TOKEN}/sendMessage"
     data = {
@@ -131,6 +132,46 @@ def send_telegram_message(message):
     except Exception as e:
         print(f"Telegram baglanti hatasi: {e}")
 
+def fetch_job_description(job_url):
+    """İlan detay sayfasından açıklamayı çek"""
+    headers = {
+        'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36'
+    }
+    
+    try:
+        response = requests.get(job_url, headers=headers, timeout=10)
+        response.raise_for_status()
+        
+        soup = BeautifulSoup(response.text, 'html.parser')
+        
+        # İlan açıklaması farklı yerlerde olabilir
+        description = ''
+        
+        # Deneme 1: show-more-less-html__markup
+        desc_elem = soup.find('div', class_='show-more-less-html__markup')
+        if desc_elem:
+            description = desc_elem.get_text(separator=' ', strip=True)
+        
+        # Deneme 2: description__text
+        if not description:
+            desc_elem = soup.find('div', class_='description__text')
+            if desc_elem:
+                description = desc_elem.get_text(separator=' ', strip=True)
+        
+        # Deneme 3: job-description
+        if not description:
+            desc_elem = soup.find('section', class_='job-description')
+            if desc_elem:
+                description = desc_elem.get_text(separator=' ', strip=True)
+        
+        return description[:2000]  # İlk 2000 karakter yeterli
+        
+    except Exception as e:
+        error_msg = f"HATA: Aciklama cekme hatasi\nURL: {job_url}\nHata: {str(e)}"
+        print(error_msg)
+        send_telegram_message(error_msg, is_error=True)
+        return ''
+
 def scrape_linkedin_jobs(search_url):
     """LinkedIn ilanlarını çek"""
     headers = {
@@ -148,7 +189,7 @@ def scrape_linkedin_jobs(search_url):
         job_cards = soup.find_all('div', class_='base-card')
         
         jobs = []
-        for card in job_cards:  # Tüm ilanlar
+        for idx, card in enumerate(job_cards, 1):  # Tüm ilanlar
             try:
                 title_elem = card.find('h3', class_='base-search-card__title')
                 company_elem = card.find('h4', class_='base-search-card__subtitle')
@@ -156,22 +197,38 @@ def scrape_linkedin_jobs(search_url):
                 link_elem = card.find('a', class_='base-card__full-link')
                 
                 if title_elem and link_elem:
+                    job_url = link_elem['href'].split('?')[0]
+                    
+                    # Detay sayfasından açıklamayı çek
+                    print(f"  [{idx}/{len(job_cards)}] Detay cekiliyor: {title_elem.text.strip()[:40]}...")
+                    description = fetch_job_description(job_url)
+                    
                     job = {
                         'title': title_elem.text.strip(),
                         'company': company_elem.text.strip() if company_elem else 'N/A',
                         'location': location_elem.text.strip() if location_elem else 'N/A',
-                        'link': link_elem['href'].split('?')[0]  # Query parametrelerini temizle
+                        'description': description,
+                        'link': job_url
                     }
                     jobs.append(job)
+                    
+                    # LinkedIn'i yormamak için kısa bekleme
+                    import time
+                    time.sleep(1)
+                    
             except Exception as e:
-                print(f"Ilan parse hatasi: {e}")
+                error_msg = f"HATA: Ilan parse hatasi\nHata: {str(e)}"
+                print(error_msg)
+                send_telegram_message(error_msg, is_error=True)
                 continue
         
         print(f"{len(jobs)} ilan bulundu")
         return jobs
         
     except Exception as e:
-        print(f"Scraping hatasi: {e}")
+        error_msg = f"HATA: Scraping hatasi\nURL: {search_url[:80]}\nHata: {str(e)}"
+        print(error_msg)
+        send_telegram_message(error_msg, is_error=True)
         return []
 
 def main():
@@ -179,109 +236,121 @@ def main():
     print(f"LinkedIn Job Bot - {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
     print(f"{'='*50}\n")
     
-    # İstatistikleri yükle
-    stats = load_stats()
-    
-    # Görülen ilanları yükle
-    seen_jobs = load_seen_jobs()
-    print(f"Daha once gorulen ilan sayisi: {len(seen_jobs)}")
-    print(f"Arama sayisi: {len(SEARCH_URLS)}")
-    if FILTER_KEYWORDS:
-        print(f"Filtre keywords: {', '.join(FILTER_KEYWORDS)}")
-    print()
-    
-    # Tüm ilanları topla
-    all_jobs = []
-    for idx, search_url in enumerate(SEARCH_URLS, 1):
-        print(f"[{idx}/{len(SEARCH_URLS)}] ", end="")
-        jobs = scrape_linkedin_jobs(search_url)
-        all_jobs.extend(jobs)
+    try:
+        # İstatistikleri yükle
+        stats = load_stats()
         
-        # LinkedIn'i yormamak için kısa bekleme
-        if idx < len(SEARCH_URLS):
-            import time
-            time.sleep(2)
-    
-    # Duplicate ilanları temizle (aynı link birden fazla aramada çıkabilir)
-    unique_jobs = []
-    seen_links = set()
-    for job in all_jobs:
-        if job['link'] not in seen_links:
-            unique_jobs.append(job)
-            seen_links.add(job['link'])
-    
-    print(f"\nToplam unique ilan: {len(unique_jobs)}")
-    
-    # Keyword filtresi uygula
-    if FILTER_KEYWORDS:
-        filtered_jobs = [job for job in unique_jobs if matches_keywords(job, FILTER_KEYWORDS)]
-        print(f"Filtre sonrasi: {len(filtered_jobs)} ilan")
-        unique_jobs = filtered_jobs
-    
-    if not unique_jobs:
-        print("Hic ilan bulunamadi")
-        # Yine de özet gönder
-        summary = f"""BOT CALISMA OZETI
+        # Görülen ilanları yükle
+        seen_jobs = load_seen_jobs()
+        print(f"Daha once gorulen ilan sayisi: {len(seen_jobs)}")
+        print(f"Arama sayisi: {len(SEARCH_URLS)}")
+        if FILTER_KEYWORDS:
+            print(f"Filtre keywords: {', '.join(FILTER_KEYWORDS)}")
+        print()
+        
+        # Tüm ilanları topla
+        all_jobs = []
+        for idx, search_url in enumerate(SEARCH_URLS, 1):
+            print(f"[{idx}/{len(SEARCH_URLS)}] ", end="")
+            jobs = scrape_linkedin_jobs(search_url)
+            all_jobs.extend(jobs)
+            
+            # LinkedIn'i yormamak için kısa bekleme
+            if idx < len(SEARCH_URLS):
+                import time
+                time.sleep(2)
+        
+        # Duplicate ilanları temizle (aynı link birden fazla aramada çıkabilir)
+        unique_jobs = []
+        seen_links = set()
+        for job in all_jobs:
+            if job['link'] not in seen_links:
+                unique_jobs.append(job)
+                seen_links.add(job['link'])
+        
+        print(f"\nToplam unique ilan: {len(unique_jobs)}")
+        
+        # Keyword filtresi uygula
+        if FILTER_KEYWORDS:
+            filtered_jobs = [job for job in unique_jobs if matches_keywords(job, FILTER_KEYWORDS)]
+            print(f"Filtre sonrasi: {len(filtered_jobs)} ilan")
+            unique_jobs = filtered_jobs
+        
+        if not unique_jobs:
+            print("Hic ilan bulunamadi")
+            # Yine de özet gönder
+            summary = f"""BOT CALISMA OZETI
 
 Tarih: {datetime.now().strftime('%d.%m.%Y %H:%M')}
 Taranan: 0 ilan
 Yeni: 0 ilan
 Durum: Yeni ilan bulunamadi"""
-        send_telegram_message(summary)
-        return
-    
-    # Yeni ilanları filtrele
-    new_jobs = [job for job in unique_jobs if job['link'] not in seen_jobs]
-    
-    print(f"Yeni ilan sayisi: {len(new_jobs)}")
-    
-    # İstatistikleri güncelle
-    stats['total_checked'] += len(unique_jobs)
-    stats['total_new'] += len(new_jobs)
-    stats['last_run'] = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
-    stats['runs'].append({
-        'timestamp': datetime.now().strftime('%Y-%m-%d %H:%M:%S'),
-        'checked': len(unique_jobs),
-        'new': len(new_jobs)
-    })
-    
-    # Son 100 çalıştırmayı tut
-    stats['runs'] = stats['runs'][-100:]
-    
-    # Yeni ilanları bildir
-    for job in new_jobs:
-        message = f"""YENI IS ILANI
+            send_telegram_message(summary)
+            return
+        
+        # Yeni ilanları filtrele
+        new_jobs = [job for job in unique_jobs if job['link'] not in seen_jobs]
+        
+        print(f"Yeni ilan sayisi: {len(new_jobs)}")
+        
+        # İstatistikleri güncelle
+        stats['total_checked'] += len(unique_jobs)
+        stats['total_new'] += len(new_jobs)
+        stats['last_run'] = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
+        stats['runs'].append({
+            'timestamp': datetime.now().strftime('%Y-%m-%d %H:%M:%S'),
+            'checked': len(unique_jobs),
+            'new': len(new_jobs)
+        })
+        
+        # Son 100 çalıştırmayı tut
+        stats['runs'] = stats['runs'][-100:]
+        
+        # Yeni ilanları bildir
+        for job in new_jobs:
+            message = f"""YENI IS ILANI
 
 Pozisyon: {job['title']}
 Sirket: {job['company']}
 Lokasyon: {job['location']}
 
 Link: {job['link']}"""
+            
+            print(f"\nBildirim: {job['title']} - {job['company']}")
+            send_telegram_message(message)
+            
+            # Görülen listeye ekle
+            seen_jobs.append(job['link'])
         
-        print(f"\nBildirim: {job['title']} - {job['company']}")
-        send_telegram_message(message)
-        
-        # Görülen listeye ekle
-        seen_jobs.append(job['link'])
-    
-    # Özet mesajı gönder
-    summary = f"""BOT CALISMA OZETI
+        # Özet mesajı gönder
+        summary = f"""BOT CALISMA OZETI
 
 Tarih: {datetime.now().strftime('%d.%m.%Y %H:%M')}
 Taranan: {len(unique_jobs)} ilan
 Yeni: {len(new_jobs)} ilan
 Durum: {'Yeni ilanlar bulundu' if new_jobs else 'Yeni ilan yok'}"""
-    send_telegram_message(summary)
-    
-    # Günlük ilanları kaydet
-    if new_jobs:
-        save_daily_jobs(new_jobs)
-    
-    # Kaydet (son 500 ilan)
-    save_seen_jobs(seen_jobs[-500:])
-    save_stats(stats)
-    
-    print(f"\nIslem tamamlandi\n")
+        send_telegram_message(summary)
+        
+        # Günlük ilanları kaydet
+        if new_jobs:
+            save_daily_jobs(new_jobs)
+        
+        # Kaydet (son 500 ilan)
+        save_seen_jobs(seen_jobs[-500:])
+        save_stats(stats)
+        
+        print(f"\nIslem tamamlandi\n")
+        
+    except Exception as e:
+        error_msg = f"""KRITIK HATA
+
+Bot calismasi sirasinda hata olustu:
+{str(e)}
+
+Tarih: {datetime.now().strftime('%d.%m.%Y %H:%M')}"""
+        print(error_msg)
+        send_telegram_message(error_msg, is_error=True)
+        raise
 
 if __name__ == "__main__":
     main()
