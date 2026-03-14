@@ -167,7 +167,7 @@ def fetch_job_description(job_url):
             if desc_elem:
                 description = desc_elem.get_text(separator=' ', strip=True)
         
-        return description[:2000]  # İlk 2000 karakter yeterli
+        return description  # Tamamını al (limit yok)
         
     except requests.exceptions.HTTPError as e:
         if e.response.status_code == 429:
