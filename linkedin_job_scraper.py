@@ -3,6 +3,7 @@ from bs4 import BeautifulSoup
 import json
 import os
 from datetime import datetime
+import pytz
 
 # Telegram bot ayarları
 TELEGRAM_TOKEN = os.environ.get('TELEGRAM_TOKEN', '')
@@ -110,9 +111,11 @@ def send_telegram_message(message, is_error=False):
     
     # Hata mesajları her zaman gönderilir, normal mesajlar sessiz saatlerde atlanır
     if not is_error:
-        current_hour = datetime.now().hour
+        # Türkiye saatini kullan (UTC+3)
+        turkey_tz = pytz.timezone('Europe/Istanbul')
+        current_hour = datetime.now(turkey_tz).hour
         if SILENT_HOURS_START <= current_hour < SILENT_HOURS_END:
-            print(f"Sessiz saat ({current_hour:02d}:00) - Telegram bildirimi atlanıyor")
+            print(f"Sessiz saat ({current_hour:02d}:00 TR) - Telegram bildirimi atlanıyor")
             return
     
     url = f"https://api.telegram.org/bot{TELEGRAM_TOKEN}/sendMessage"
