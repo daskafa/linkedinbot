@@ -1,0 +1,10 @@
+[
+  {
+    "title": "Backend Developer Aranıyor (MMOPG DENEYİMLİ)",
+    "company": "ROK ONLINE",
+    "location": "Istanbul, Istanbul, Türkiye",
+    "description": "sıfırdan yazılmış bir MMORPG projesidir. Backend; C# ASP.NET Core 8, SignalR, MongoDB ve Redis üzerine kurulu, 18 partial class hub mimarisiyle çalışan gerçek zamanlı bir oyun sunucusudur. Mevcut sistemi genişletecek, yeni game sistemleri yazacak bir backend geliştirici arıyoruz. Ne üzerinde çalışacaksın? → Skill pipeline, combat, dungeon/raid ve PvP sistemlerinin geliştirilmesi → SignalR hub'larında yeni game event'lerinin yazılması → MongoDB şema tasarımı ve performans optimizasyonu → Redis ile oturum / önbellek yönetimi → Monster AI, spawn sistemi ve world state senkronizasyonu → Ekonomi, market, envanter ve upgrade sistemleri Aradığımız özellikler ✓ C# ve ASP.NET Core konusunda güçlü deneyim✓ SignalR veya WebSocket ile gerçek zamanlı iletişim deneyimi✓ MongoDB ve Redis kullanımında yetkinlik✓ Temiz, sürdürülebilir mimari anlayışı✓ Multiplayer oyun mantığına (state sync, latency, cheat prevention) ilgi Artı puan + Oyun sunucusu veya MMORPG backend'i üzerinde çalışmış olmak+ Knight Online oyun mekaniğine hakimiyet+ Docker / deployment deneyimi ASP.NET Core 8 C# SignalR MongoDB Redis MMORPG Uzaktan Mevcut sistem zaten çalışıyor — kimlik doğrulama, combat, klan, market, dungeon frameworkleri hazır. Birlikte derinleştireceğimiz, gerçek ölçekte bir oyun sunucusu. PDF BAŞVURULARI İNCELENİP DÖNÜŞ YAPILACAKTIR.",
+    "link": "https://tr.linkedin.com/jobs/view/backend-developer-aran%C4%B1yor-mmopg-deneyi%CC%87mli%CC%87-at-rok-online-4383146827",
+    "found_at": "2026-03-14 01:47:39"
+  }
+]
