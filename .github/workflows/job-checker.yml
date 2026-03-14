@@ -2,8 +2,8 @@ name: LinkedIn Job Checker
 
 on:
   schedule:
-    # Her saat başı çalışır
-    - cron: '0 * * * *'
+    # Her 90 dakikada bir çalışır (1.5 saat)
+    - cron: '0 */2 * * *'
   
   # Manuel çalıştırma için
   workflow_dispatch:

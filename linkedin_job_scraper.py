@@ -140,7 +140,7 @@ def fetch_job_description(job_url):
     
     try:
         import time
-        time.sleep(2)  # Her detay sayfası için 2 saniye bekle
+        time.sleep(3)  # Her detay sayfası için 3 saniye bekle (2'den 3'e)
         
         response = requests.get(job_url, headers=headers, timeout=10)
         response.raise_for_status()
@@ -270,8 +270,8 @@ def main():
             # LinkedIn'i yormamak için aramalar arası bekleme
             if idx < len(SEARCH_URLS):
                 import time
-                print(f"\nAramalar arasi 5 saniye bekleniyor...")
-                time.sleep(5)
+                print(f"\nAramalar arasi 10 saniye bekleniyor...")
+                time.sleep(10)  # 5'ten 10'a
         
         # Duplicate ilanları temizle (aynı link birden fazla aramada çıkabilir)
         unique_jobs = []
