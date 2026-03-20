@@ -1,0 +1,10 @@
+[
+  {
+    "title": "Full Stack Engineer",
+    "company": "Seasoft Software Company",
+    "location": "Kocasinan, Kayseri, Türkiye",
+    "description": "Full Stack Developer Şirket: SeaSoft Yazılım & Teknoloji Konum: Kayseri (Ofis / Hibrit) Hakkımızda SeaSoft olarak geliştirdiğimiz Binora Akıllı Yönetim Sistemi, bina ve site yönetimini dijitalleştiren bir SaaS platformudur. Aktif olarak geliştirilmekte olan bu ürünün teknik süreçlerinde görev alacak ekip arkadaşı arıyoruz. Pozisyon Tanımı Bu pozisyonda çalışacak kişi; •Binora yazılımının geliştirme süreçlerinde aktif rol alacaktır •Mevcut sistemde hata tespiti ve düzeltmeleri yapacaktır •Yeni özelliklerin geliştirilmesine katkı sağlayacaktır •Backend ve frontend süreçlerinde görev alacaktır •Sistem performansı ve genel yapı iyileştirmelerine destek olacaktır •Gerektiğinde kurumsal web sitesi projelerinde görev alacaktır Aranan Nitelikler Core teknolojiler: •\tReact (Vite) •\tTailwind CSS •\tNestJS (TypeScript) •\tTypeORM •\tPostgreSQL Backend ve entegrasyon: •\tREST API geliştirme ve kullanımı •\tJWT / Passport.js •\tbcrypt •\tPayTR ve NetGSM API bilgisi (tercih sebebi) Araçlar ve altyapı: •\tGit •\tDocker (tercih sebebi) •\tESLint / Prettier Cloud: •AWS veya Azure hakkında temel bilgi (tercih sebebi) Mobil ve Ek Nitelikler (Tercih Sebebi) •React Native (tercihen Expo) •Mevcut API’leri mobil uygulamada kullanabilme •Firebase veya OneSignal ile push notification •App Store ve Google Play yayın süreçlerine aşinalık •UI/UX konusunda temel bilgi Aradığımız Profil •\tÖğrenmeye açık ve gelişime istekli •\tSorumluluk alabilen •\tProblem çözme becerisi olan •\tTakım çalışmasına uyumlu •\tKod kalitesine ve düzenine önem veren",
+    "link": "https://tr.linkedin.com/jobs/view/full-stack-engineer-at-seasoft-software-company-4385701422",
+    "found_at": "2026-03-20 01:12:19"
+  }
+]
