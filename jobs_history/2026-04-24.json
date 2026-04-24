@@ -1,0 +1,10 @@
+[
+  {
+    "title": "Full Stack Developer (VueJs, Nuxt.js & C#)",
+    "company": "B2B STORE",
+    "location": "Türkiye",
+    "description": "Pozisyon Hakkında Yüksek trafikli sistemlerimizde uçtan uca mimari sorumluluk alacak, kod kalitesini standartların üzerine taşıyacak ve ölçeklenebilir mikroservis ekosistemimize liderlik edecek bir Full stack Developer arıyoruz. Ne Yapacaksınız Event-driven mimariye uygun, yüksek performanslı Node.js servisleri tasarlamak ve implemente etmekVue.js 3 ve TypeScript kullanarak, reusable komponent kütüphaneleri ve performans odaklı ön yüzler geliştirmekFirebase ve PostgreSQL veritabanı katmanlarında query optimizasyonu ve veri modellemesi yapmak Aradığımız Profil Node.js runtime ve asenkron programlama konusunda derinlemesine uzmanlıkModern frontend ekosistemine (State management, Composition API, SSR) hakimiyetDocker, Kubernetes ve CI/CD süreçlerinde aktif tecrübeVue.js ve Nuxt.js konusunda uzmanlık.Net teknolojisi C# ta yazılım geliştirmişMS SQL ile çalışmış Tercih Sebebi Microservices mimarisi ve Docker/Kubernetes konteynerizasyon süreçlerinde deneyimBirim test (Unit Test) ve entegrasyon testleri (Jest, Cypress) yazma disiplinine sahip olmakTeknik literatürü takip edebilecek seviyede İngilizce bilgisiAçık kaynak projelere katkı sağlamış olmak veya aktif bir GitHub portfolyosuAgile ve Scrum metodolojilerine aşinalıkClean Code konseptlerinin uygulanması ve kaynak kod iyileştirme/refactoring konusunda uzmanlıkBootstrap, HTML ve CSS deneyimi",
+    "link": "https://tr.linkedin.com/jobs/view/full-stack-developer-vuejs-nuxt-js-c%23-at-b2b-store-4403708362",
+    "found_at": "2026-04-24 08:03:13"
+  }
+]
