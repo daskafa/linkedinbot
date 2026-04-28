@@ -86,5 +86,29 @@
     "description": "Position: Full Stack Developer Type: Contract Compensation: $50 - $120/hour Location: Remote Commitment: 10-40 hrs/week Role Responsibilities Design, develop, and maintain scalable web and mobile applications using advanced technologies and frameworks. Integrate third-party APIs and s ystems to ensure seamless connectivity and performance. Develop robust backend solutions utilizing Node.js, GoLang, FastAPI, Nest.js, or RESTful APIs. Create intuitive, high-quality user interfaces with React, Angular, and React Native. Contribute to e-commerce and CMS development using Shopify and Wordpress. Collaborate closely with cross-functional teams to provide technical insight and ensure project alignment. Requirements: Have strong relevant experience as a Full Stack Developer across diverse industries, excluding IT infrastructure or Cybersecurity. Demonstrate advanced proficiency in Node.js, Typescript, GoLang, FastAPI, Nest.js, or REST API development. Possess strong expertise in frontend frameworks including React, Angular, and React Native. Have a demonstrated ability to integrate and manage complex APIs and third-party services. Have hands-on experience with Shopify and Wordpress platforms. Application Process: Easy Apply on LinkedIn Check email for next steps Participate in resume evaluation & interview stage",
     "link": "https://tr.linkedin.com/jobs/view/full-stack-engineer-remote-at-crossing-hurdles-4406524884",
     "found_at": "2026-04-28 13:35:01"
+  },
+  {
+    "title": "PHP Geliştiricisi",
+    "company": "HMS Otel Programı",
+    "location": "Denizli, Türkiye",
+    "description": "PHP dilinde kodlamaya hakim, XHTML, CSS, JavaScript, Php ve MySQL konularında deneyimli, PHP Framework üzerinde çalışmış, tercihen Symfony,Laravel frameworkine hakim, Tercihen ilgili Bölümlerden Mezun, En az 2 yıl tecrübeli, Web Servis, SOAP, REST API ile bilgisi olan, Javascript konusunda popüler kütüphanelerle kod geliştirmiş ve teknolojiye hakim, Özgün çalışmalarını referans olarak sunabilecek, Yaratıcı fikirler üretebilen, Öğrenmeyi ve araştırmayı seven, Yoğun iş temposuna ve ekip çalışmasına ayak uydurabilecek, Web teknolojileri konusunda bilgi sahibi, yenilikleri takip edebilen ve uygulayabilen İŞ TANIMI Yazılım ihtiyaçlarınının karşılanması, Gerektiğinde analizine yönlendirici olunması, Yeni ürünlerin yazılım tasarımlarının gerçekleştirilmesi, Şirkete özgü yazılım araçlarının geliştirilmesi, Ürün revizyonlarının yapılması. Bilişim sektöründe faaliyet gösteren firmamızın DENİZLİ OFİSİNDE görevlendirilmek üzere PHP Yazılım Uzmanı arıyoruz.",
+    "link": "https://tr.linkedin.com/jobs/view/php-geli%C5%9Ftiricisi-at-hms-otel-program%C4%B1-4405558178",
+    "found_at": "2026-04-28 16:16:48"
+  },
+  {
+    "title": "Junior Backend Developer",
+    "company": "Lokalde",
+    "location": "Greater Istanbul",
+    "description": "What we look for Backend endpoint geliştirme tecrübesi olması Servis mantığını ve API çalışma yapısını bilmesi Veritabanından veri okuma/yazma işlemlerini yapabilmesi PostgreSQL üzerinde temel sorgular yazabilmesi DB schema üzerinde güncelleme yapabilmesi Tablo oluşturma, kolon ekleme, migration alma gibi süreçlere aşina olması Mevcut uygulamalarda bug fix yapabilecek seviyede olması Yeni geliştirilecek uygulamalarda backend geliştirme süreçlerine destek olabilmesi Temel backend mantığını bilen, öğrenmeye açık ve yönlendirme ile işi ilerletebilen What we expect Yeni backend endpoint’lerinin geliştirilmesi Mevcut sistemlerde hata düzeltmeleri yapılması Django modelleri ve migration süreçlerinin yönetilmesi PostgreSQL tarafında gerekli veri işlemlerinin yapılması Backend servislerinin geliştirilmesi ve iyileştirilmesi Ekip tarafından verilen teknik görevlerin uygulanması Tech stack Python Django / Django REST Framework PostgreSQL If you’re passionate about mobile, AI, and building products that scale — we should talk. We love shipping real things that make a difference and we’re building with people who do too. Think you can keep up? Drop us a line: jobs@lokalde.com We review every application carefully and reply to everyone who reaches out.",
+    "link": "https://tr.linkedin.com/jobs/view/junior-backend-developer-at-lokalde-4405550369",
+    "found_at": "2026-04-28 16:16:48"
+  },
+  {
+    "title": "Backend-Frontend Developer",
+    "company": "genessencedx",
+    "location": "Ankara, Ankara, Türkiye",
+    "description": "Yapılacak olan TÜSEB başvurumuz için ekip arkadaşları arıyoruz. Proje kapsamında NGS datasının işlenmesi ve varyant analizi (tespit, anotasyon, filtreleme ve görselleştirme) süreçlerini uçtan uca destekleyen bir biyoinformatik altyapı olacaktır. ﻿ Backend Geliştirici: API geliştirme konusunda deneyimli Veritabanı yönetimi ve tasarımı bilgisine sahip Tercihen Python veya Node.js teknolojilerinde tecrübeli Frontend Geliştirici: React veya Vue.js framework’lerinde deneyimli Veri görselleştirme konusunda bilgi sahibi API entegrasyonu süreçlerine hakim Önemli Not Bu ilan, Türkiye Sağlık Enstitüleri Başkanlığı (TÜSEB) proje başvurusu kapsamında ön başvuru toplamak amacıyla paylaşılmaktadır. Projenin desteklenmesi halinde işe alım gerçekleştirilecektir. Başvuru Süreci Başvurularınızı, özgeçmişiniz ile birlikte info@genessencedx.com adresine iletebilirsiniz. Uygun adaylarla proje süreci içerisinde iletişime geçilecektir. Son Başvuru Tarihi: 10.05.2026",
+    "link": "https://tr.linkedin.com/jobs/view/backend-frontend-developer-at-genessencedx-4405550454",
+    "found_at": "2026-04-28 16:16:48"
   }
 ]
