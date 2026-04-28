@@ -110,5 +110,13 @@
     "description": "Yapılacak olan TÜSEB başvurumuz için ekip arkadaşları arıyoruz. Proje kapsamında NGS datasının işlenmesi ve varyant analizi (tespit, anotasyon, filtreleme ve görselleştirme) süreçlerini uçtan uca destekleyen bir biyoinformatik altyapı olacaktır. ﻿ Backend Geliştirici: API geliştirme konusunda deneyimli Veritabanı yönetimi ve tasarımı bilgisine sahip Tercihen Python veya Node.js teknolojilerinde tecrübeli Frontend Geliştirici: React veya Vue.js framework’lerinde deneyimli Veri görselleştirme konusunda bilgi sahibi API entegrasyonu süreçlerine hakim Önemli Not Bu ilan, Türkiye Sağlık Enstitüleri Başkanlığı (TÜSEB) proje başvurusu kapsamında ön başvuru toplamak amacıyla paylaşılmaktadır. Projenin desteklenmesi halinde işe alım gerçekleştirilecektir. Başvuru Süreci Başvurularınızı, özgeçmişiniz ile birlikte info@genessencedx.com adresine iletebilirsiniz. Uygun adaylarla proje süreci içerisinde iletişime geçilecektir. Son Başvuru Tarihi: 10.05.2026",
     "link": "https://tr.linkedin.com/jobs/view/backend-frontend-developer-at-genessencedx-4405550454",
     "found_at": "2026-04-28 16:16:48"
+  },
+  {
+    "title": "Backend Developer",
+    "company": "Forsid",
+    "location": "Kartal, Istanbul, Türkiye",
+    "description": "Sorumluluklar Laravel Framework üzerinde modüler ve ölçeklenebilir backend geliştirmek RESTful API ve entegrasyon servislerini tasarlamak, geliştirmek ve dokümante etmek Veritabanı tasarımı, optimizasyonu ve performans iyileştirmelerini yapmak Üçüncü taraf servisler ve pazar yerleri (Trendyol, Hepsiburada, Amazon, Etsy vb.) ile entegrasyon süreçlerini yönetmek Kod kalitesi, güvenlik ve test standartlarını uygulamak Takım ile Agile/Scrum süreçlerine aktif katılım sağlamak DevOps süreçlerine (CI/CD, versiyonlama, deployment) katkı sunmak Nitelikler PHP ve Laravel Framework konusunda en az 3 yıl deneyim MySQL veya PostgreSQL veritabanları konusunda güçlü bilgi API geliştirme ve entegrasyon deneyimi Git versiyon kontrol sistemine hakimiyet Temiz kod yazma, SOLID prensipleri ve design pattern bilgisi Tercihen Docker, Redis, Queue sistemleri (Horizon, RabbitMQ, SQS) deneyimi Tercihen önceden e-ticaret altyapısı veya SaaS projelerinde görev almış olmak Takım çalışmasına yatkın, iletişim becerileri güçlü Bizimle Çalışmanın Avantajları Yeni nesil e-ticaret altyapısının çekirdek ekibinde yer alma fırsatı Yenilikçi ve hızlı büyüyen bir projede kariyer geliştirme imkanı Dinamik, genç ve vizyoner bir ekip kültürü",
+    "link": "https://tr.linkedin.com/jobs/view/backend-developer-at-forsid-4405588205",
+    "found_at": "2026-04-28 21:07:18"
   }
 ]
