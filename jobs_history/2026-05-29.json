@@ -1,0 +1,10 @@
+[
+  {
+    "title": "Full Stack Engineer Intern",
+    "company": "C'esta Technology",
+    "location": "Bakirkoy, Istanbul, Türkiye",
+    "description": "Full Stack Yazılım Stajyeri (RAG / Yapay Zeka Projeleri) RAG (Retrieval-Augmented Generation) tabanlı yapay zeka projelerinde görev alacak, öğrenmeye açık ve üretmeyi seven bir Full Stack Yazılım Stajyeri arıyoruz. Büyük ölçekli veri üzerinde çalışan semantik arama ve doküman analizi sistemlerinin geliştirilmesine baştan sona dahil olma fırsatı bulacaksın. Aranan Nitelikler Backend tarafında en az bir framework ile (Node.js, Python/FastAPI, Django vb.) proje geliştirme deneyimi İlişkisel ve/veya NoSQL veritabanları (PostgreSQL, MongoDB vb.) konusunda bilgi; veri modelleme ve sorgu optimizasyonuna hâkimiyet Vektör veritabanları (Pinecone, Qdrant, pgvector, Weaviate vb.) ve embedding mantığına ilgi veya temel düzeyde bilgi Frontend tarafında modern bir kütüphane/framework (React, Next.js, Vue vb.) ile arayüz geliştirebilme REST/GraphQL API tasarımı ve backend mimarileri hakkında temel bilgi Git ile versiyon kontrolü kullanımı Temiz, okunabilir ve sürdürülebilir kod yazma alışkanlığı Tercih Sebebi LLM tabanlı uygulama geliştirme veya RAG pipeline'ları ile çalışma deneyimi Docker, CI/CD süreçleri hakkında bilgi Bu Staj Hakkında Bu pozisyon zorunlu staj kapsamındadır ve ücretsiz bir staj programıdır. Sürecin sonunda, gerçek bir ürünün geliştirme döngüsünde edineceğin deneyim ve birebir mentorluk en büyük kazanımın olacaktır.",
+    "link": "https://tr.linkedin.com/jobs/view/full-stack-engineer-intern-at-c-esta-technology-4417903036",
+    "found_at": "2026-05-29 02:09:11"
+  }
+]
