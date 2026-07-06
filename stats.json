@@ -1,13 +1,8 @@
 {
-  "total_checked": 10488,
+  "total_checked": 10498,
   "total_new": 1498,
-  "last_run": "2026-07-06 19:55:27",
+  "last_run": "2026-07-06 21:34:02",
   "runs": [
-    {
-      "timestamp": "2026-06-25 02:26:58",
-      "checked": 11,
-      "new": 1
-    },
     {
       "timestamp": "2026-06-25 07:41:54",
       "checked": 9,
@@ -501,6 +496,11 @@
     {
       "timestamp": "2026-07-06 19:55:27",
       "checked": 8,
+      "new": 0
+    },
+    {
+      "timestamp": "2026-07-06 21:34:02",
+      "checked": 10,
       "new": 0
     }
   ]
