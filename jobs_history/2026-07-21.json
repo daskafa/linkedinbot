@@ -94,5 +94,13 @@
     "description": "İş Tanımı Web programlama ve veritabanı yönetimi konusunda iyi bilgi sahip olan PHP tecrübesi olan MySQL tecrübesi olan Tercihen en az 3 yıllık iş tecrübesine sahip olmak DetayAPI’lar ve web hizmetleri üzerinde çalışmış olmak Tercihen üniversitelerin ilgili bölümlerinden mezun İstanbul Fulltime Hemen Başvur",
     "link": "https://tr.linkedin.com/jobs/view/backend-developer-at-msy-yaz%C4%B1l%C4%B1m-4442669641",
     "found_at": "2026-07-21 19:19:02"
+  },
+  {
+    "title": "Backend Developer",
+    "company": "Cyber2tech Solutions",
+    "location": "Istanbul, Istanbul, Türkiye",
+    "description": "career.detail.badge Backend Developer career.detail.hero.text career.detail.labels.department:Backend Team career.detail.labels.location:Istanbul career.detail.labels.type:Full-time career.detail.hero.banner career.requirements.heading career.requirements.intro Backend geliştirme konusunda deneyim (.NET Core, Node.js, Python vb.) SQL ve NoSQL veritabanları hakkında bilgi REST API geliştirme ve entegrasyon deneyimi ORM araçları (Entity Framework, Prisma, Sequelize, Mongoose) kullanımı Git versiyon kontrol sistemi kullanımı Temel yazılım mimarisi prensiplerine (SOLID, Clean Architecture) hakimiyet Asenkron programlama ve background task yapıları hakkında bilgi API güvenliği, authentication ve authorization konularında temel bilgi Temel Docker bilgisi (container mantığı) Öğrenmeye açık, problem çözme odaklı yaklaşım career.responsibilities.heading career.responsibilities.intro Modern backend mimarileri geliştirmek (.NET, Node.js veya Python) RESTful API tasarımı ve geliştirme Veritabanı modelleme ve sorgu optimizasyonu (PostgreSQL, MSSQL, MongoDB) Caching, background jobs ve messaging queue (Redis, RabbitMQ) kullanımı Temiz, sürdürülebilir ve test edilebilir kod yazımı Kod inceleme (code review) süreçlerine katılım Mikroservis veya modüler mimari yapılar ile çalışma Üçüncü parti servis entegrasyonlarını gerçekleştirme Performans, güvenlik ve hata yönetimi üzerine geliştirmeler yapma Teknik dokümantasyon oluşturma ve güncelleme career.application.ready.badge career.application.ready.title Apply now for the {title} role and join the team! career.application.ready.primary career.application.ready.security",
+    "link": "https://tr.linkedin.com/jobs/view/backend-developer-at-cyber2tech-solutions-4443554903",
+    "found_at": "2026-07-21 21:12:17"
   }
 ]
