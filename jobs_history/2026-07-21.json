@@ -86,5 +86,13 @@
     "description": "Heltia nedir? Türkiye'nin en hızlı büyüyen dijital sağlık platformlarından biriyiz. 150'den fazla kurumsal müşteriye, 400.000'in üzerinde çalışana hizmet veriyoruz. Northzone liderliğinde ciddi yatırımlar aldık ve büyümeye devam ediyoruz. Ne üzerinde çalışacaksın? C#/.NET 8, MongoDB ve PostgreSQL kullanan çok API'li bir monorepo'da geliştirme yapacaksın Eşleştirme motoru, randevu/takvim, ödeme, sigorta entegrasyonları gibi iş kritik modüllerde çalışacaksın Hangfire ile arka plan iş kuyrukları yazacak ve yöneteceksin AI/LLM destekli ürün alanlarında backend entegrasyonları geliştireceksin Feature flag sistemi üzerinden kademeli rollout ve A/B test altyapısına dokunacaksın Docker + Kubernetes üzerinde çalışan servislerin CI/CD pipeline'ına katkı vereceksin Grafana/Loki/Tempo ile üretimdeki sorunları takip edip çözeceksin Nasıl çalışıyoruz? Domain bazlı sahiplenme ile çalışıyoruz — her ekip kendi backlog'unu yönetiyor, uçtan uca sorumluluk alıyor. PR'lar unit test ve code review geçmeden merge edilmiyor. Küçük bir ekibiz, kararlarının gerçek etkisini görürsün. Sende ne arıyoruz? C#/.NET ile production seviyesinde backend deneyimi (3+ yıl tercih edilir) MongoDB ve PostgreSQL/SQL Server deneyimi REST API tasarımı, repository/service katmanlı mimari ve iş kuyruğu (Hangfire veya benzeri) deneyimi Unit/integration test yazma alışkanlığı — bizde bu opsiyonel değil Docker ve temel Kubernetes bilgisi, CI/CD pipeline deneyimi Bağımsız çalışabilme ve sahiplenme — sürekli yönlendirilmeyi beklemeden ilerleyebilme İlgini çektiyse başvurularını bekliyoruz -> https://heltia-jobs.lovable.app/apply/559eb74d-9b17-4bc2-9aa7-5bcb69ad0c49",
     "link": "https://tr.linkedin.com/jobs/view/backend-engineer-at-heltia-4440447846",
     "found_at": "2026-07-21 13:25:41"
+  },
+  {
+    "title": "Backend Developer",
+    "company": "Msy Yazılım",
+    "location": "Istanbul, Istanbul, Türkiye",
+    "description": "İş Tanımı Web programlama ve veritabanı yönetimi konusunda iyi bilgi sahip olan PHP tecrübesi olan MySQL tecrübesi olan Tercihen en az 3 yıllık iş tecrübesine sahip olmak DetayAPI’lar ve web hizmetleri üzerinde çalışmış olmak Tercihen üniversitelerin ilgili bölümlerinden mezun İstanbul Fulltime Hemen Başvur",
+    "link": "https://tr.linkedin.com/jobs/view/backend-developer-at-msy-yaz%C4%B1l%C4%B1m-4442669641",
+    "found_at": "2026-07-21 19:19:02"
   }
 ]
