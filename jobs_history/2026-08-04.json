@@ -1,0 +1,10 @@
+[
+  {
+    "title": "Python Backend Engineer, AI Agent Training & Evaluation",
+    "company": "Braintrust",
+    "location": "Türkiye",
+    "description": "Our client is staffing a large frontier-AI data initiative and is seeking experienced backend software engineers to build infrastructure, integrations, and high-quality training and evaluation tasks for AI agents. What You'll Do Build Python backend applications that replicate SaaS tools such as Slack, Linear, Jira, Notion, Gmail, and wikis. Implement integrations and full-service backend functionality, then test connectors for faithful behavior. Extend existing connectors or build new ones within agreed delivery timelines. Mine data and workflows to identify realistic long-horizon tasks for AI agents. Author tasks, validate their quality and realism, and write clear evaluation rubrics. Use AI coding assistants throughout development, testing, QA, and validation. Participate in onboarding, calibration, and quality-review cycles. Requirements At least 3 years of backend software-engineering experience. Strong Python proficiency using FastAPI, Flask, or Django. Proficiency with Git, Docker, REST APIs, microservices, testing, and code-quality practices. Regular use of AI coding assistants such as Claude Code, Codex, Cursor, GitHub Copilot, or similar tools. Strong English communication, analytical judgment, and ability to work independently in a distributed team. Ability to complete at least one approved task per day during the 2-3 week engagement. Ability to complete a Python and Docker assessment after approval. Nice to Have SaaS connector or integration experience. AI-data evaluation, QA methodology, or rubric-writing experience. Experience developing realistic workflows for long-horizon AI tasks. Compensation $300 USD per approved task. Each task may take approximately 5-10 hours, with an expected completion time of about 6 hours. Payment is based on approved tasks, not hours worked.",
+    "link": "https://tr.linkedin.com/jobs/view/python-backend-engineer-ai-agent-training-evaluation-at-braintrust-4448637799",
+    "found_at": "2026-08-04 01:40:29"
+  }
+]
