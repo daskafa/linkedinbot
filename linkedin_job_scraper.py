@@ -11,7 +11,7 @@ CHAT_ID = os.environ.get('CHAT_ID', '')
 
 # Sessiz saatler (Telegram bildirimi gönderilmez, ama bot çalışır)
 SILENT_HOURS_START = 0  # Gece 12 (00:00)
-SILENT_HOURS_END = 0    # Sabah 9 (09:00)
+SILENT_HOURS_END = 9    # Sabah 9 (09:00)
 
 # LinkedIn arama URL'leri (virgülle ayrılmış)
 SEARCH_URLS_STR = os.environ.get('LINKEDIN_SEARCH_URLS', 
@@ -246,48 +246,10 @@ def scrape_linkedin_jobs(search_url):
         send_telegram_message(error_msg, is_error=True)
         return []
 
-def save_config_to_file():
-    """FILTER_KEYWORDS ve LINKEDIN_SEARCH_URLS değerlerini text dosyasına yaz"""
-    config_file = 'bot_config.txt'
-    
-    with open(config_file, 'w', encoding='utf-8') as f:
-        f.write("=" * 60 + "\n")
-        f.write("LINKEDIN JOB BOT KONFIGÜRASYONU\n")
-        f.write("=" * 60 + "\n\n")
-        
-        f.write(f"Tarih: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}\n\n")
-        
-        f.write("-" * 60 + "\n")
-        f.write("LINKEDIN_SEARCH_URLS:\n")
-        f.write("-" * 60 + "\n")
-        if SEARCH_URLS:
-            for idx, url in enumerate(SEARCH_URLS, 1):
-                f.write(f"{idx}. {url}\n")
-        else:
-            f.write("(Boş)\n")
-        
-        f.write("\n")
-        f.write("-" * 60 + "\n")
-        f.write("FILTER_KEYWORDS:\n")
-        f.write("-" * 60 + "\n")
-        if FILTER_KEYWORDS:
-            for idx, keyword in enumerate(FILTER_KEYWORDS, 1):
-                f.write(f"{idx}. {keyword}\n")
-        else:
-            f.write("(Boş - tüm ilanlar kabul edilir)\n")
-        
-        f.write("\n")
-        f.write("=" * 60 + "\n")
-    
-    print(f"Konfigürasyon '{config_file}' dosyasına yazıldı")
-
 def main():
     print(f"\n{'='*50}")
     print(f"LinkedIn Job Bot - {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
     print(f"{'='*50}\n")
-    
-    # Konfigürasyonu dosyaya yaz
-    save_config_to_file()
     
     try:
         # İstatistikleri yükle
