@@ -1,0 +1,10 @@
+[
+  {
+    "title": "Full Stack Engineer",
+    "company": "LOOP Digital Signage",
+    "location": "Istanbul, Türkiye",
+    "description": "Full-Stack Developer (Node.js / Next.js) LOOP DS | Istanbul, Hybrid | Full-time LOOP DS is a cloud-based, hardware-agnostic digital signage platform. Customers manage the screens in all their locations from one dashboard, even when those screens are different brands, operating systems and device types. What you’ll do Write, review and ship production code across the stack: web application, API and player software on devices Develop and optimize the media pipeline: ingestion, transcoding, storage and delivery to devices of different types Engineer player reliability: consistent, stable playback across device brands and models, online and offline, including caching, reconnection and state synchronization Build and maintain test automation and CI/CD pipelines, leveraging AI-assisted workflows Operate and improve cloud infrastructure for availability, performance and cost What we’re looking for Backend: Node.js, REST APIs Frontend: Next.js/React (TypeScript) Database: MongoDB Cloud: AWS or Azure Real experience automating development, testing and CI/CD with AI tools Understanding of smart TV and embedded display platforms at SoC level: hardware limits, video decoding, memory Comfortable improving an existing codebase Working English Nice to have: FFmpeg, WebSockets, CDN/object storage, Tizen or webOS app development, Go or Kotlin.",
+    "link": "https://tr.linkedin.com/jobs/view/full-stack-engineer-at-loop-digital-signage-4479438399",
+    "found_at": "2026-10-21 19:57:55"
+  }
+]
