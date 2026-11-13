@@ -1,0 +1,10 @@
+[
+  {
+    "title": "Full Stack Engineer",
+    "company": "Sezar",
+    "location": "Ankara, Türkiye",
+    "description": "Sezar Nedir: Sezar; kurs, spor salonu, diş kliniği ve oto kiralama gibi randevu, kayıt ve tahsilat yapan işletmeler için geliştirdiğimiz bir yönetim yazılımı. Ürün canlıda ve müşterilerimiz günlük işlerini Sezar üzerinden yönetiyor. Mobil erişim, e-posta bildirimleri, SMS entegrasyonu ve ödeme altyapısı üzerinde de çalışıyoruz. Neler Yapacaksın - Ürünün yeni özelliklerini uçtan uca geliştirmek: veri modeli, sunucu tarafı iş kuralları, arayüz - Sektöre özel sürümleri (diş, spor salonu, oto kiralama vb.) esnek bir çekirdek üzerinde kurmak - Canlı ortamın güvenliğini, yedeklemesini ve dağıtımını birlikte sahiplenmek - Ödeme sağlayıcısı, e-posta ve SMS gibi dış servis entegrasyonlarını yürütmek - Kod kalitesi, test ve sürüm disiplini için standartlar belirlemek - Müşteri geri bildirimini doğrudan dinleyip ürün kararlarına katkı vermek Aradığımız Özellikler - TypeScript ile 3 yıl üretim seviyesinde geliştirme deneyimi - React ve Next.js (App Router, sunucu bileşenleri) ile çalışmış olmak - PostgreSQL ile veri modelleme, sorgu optimizasyonu ve şema değişikliği (göç) yönetimi - Kimlik doğrulama, yetkilendirme ve veri izolasyonu konularında somut deneyim - Linux sunucu, Git ve temel ağ/güvenlik bilgisi - Kararlarını gerekçelendirip yazılı olarak paylaşabilmek - Yapay Zeka araçlarını etkili şekilde kullanbilmek Olursa İyi Olur: - Çok kiracılı (multi-tenant) SaaS deneyimi - Ödeme sistemleri, faturalama veya e-fatura bilgisi - Yedekleme, izleme ve olay yönetimi - Açık kaynak katkısı ya da yayımlanmış bir proje Nasıl Çalışıyoruz: - Küçük bir ekip, kısa karar zincirleri, her değişiklik kayıt altında - Ürünün sahibi olma: teknik kararlar sende, sonuçların sorumluluğu da sende - Çalışma modeli: Hibrit",
+    "link": "https://tr.linkedin.com/jobs/view/full-stack-engineer-at-sezar-4488577209",
+    "found_at": "2026-11-13 02:35:19"
+  }
+]
