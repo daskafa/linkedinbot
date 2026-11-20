@@ -1,0 +1,18 @@
+[
+  {
+    "title": "Senior Java Backend Engineer (6-month fixed-term)",
+    "company": "finbyte",
+    "location": "Türkiye",
+    "description": "About Us We are finbyte, a tech company based in Berlin helping businesses build fintech solutions and gain momentum to launch innovative offerings. finbyte brings Commencis’ extensive experience in software & product development and strong talent to the heart of Europe’s fintech scene. On a mission to thrive fintechs and enterprises in the era of disruption, finbyte aims to create momentum and accelerate future-minded companies. Join us to build the backbone of pioneering companies. The position in a nutshell As a Senior Java Backend Engineer, you’ll design, build and run secure backend services and APIs with an international, cross-functional team. You’ll shape technical decisions and help other engineers grow. This role is initially a six-month fixed-term contract, with the possibility of extension. What you’ll do Design and build Spring Boot services and REST APIs with a focus on security, low latency and high availability. Own services from design through deployment and production support. Use logs, metrics and traces to troubleshoot problems and improve reliability. Write maintainable code and automated tests. Improve how the team builds, tests and deploys software through CI/CD. Work with product, frontend, QA and platform colleagues to define API contracts, evaluate trade-offs and deliver features. Lead code and design reviews, mentor engineers and help plan upgrades to services and dependencies. What you’ll bring 5+ years of professional software engineering experience building backend systems, including hands-on experience building production services with modern Java and Spring Boot. Experience designing REST APIs and distributed services, with a practical understanding of concurrency, failure handling and secure API design. Solid SQL and relational database skills, including data modelling, transactions and query performance. Experience writing unit and integration tests, for example with JUnit and Testcontainers, and debugging production issues. Working knowledge of Linux, Git and at least one cloud platform such as AWS, Azure or Google Cloud. Strong written and spoken English and the ability to explain technical decisions clearly. Nice to have Experience with Java 21 or 25, or with upgrading Java and Spring Boot applications. Experience with Docker and Kubernetes, or with deploying and operating containerised services. Experience with event-driven systems or stream processing using Kafka or a similar platform. Familiarity with OpenTelemetry, Redis or backend development in fintech or another regulated industry. How to apply Send us your CV via LinkedIn or email. We’d love to hear about a backend system you helped build or improve.",
+    "link": "https://tr.linkedin.com/jobs/view/senior-java-backend-engineer-6-month-fixed-term-at-finbyte-4491925112",
+    "found_at": "2026-11-20 14:39:55"
+  },
+  {
+    "title": "Mobil Backend Geliştirici",
+    "company": "ICterra Information and Communication Technologies",
+    "location": "Istanbul, Türkiye",
+    "description": "",
+    "link": "https://tr.linkedin.com/jobs/view/mobil-backend-geli%C5%9Ftirici-at-icterra-information-and-communication-technologies-4491920091",
+    "found_at": "2026-11-20 14:39:55"
+  }
+]
